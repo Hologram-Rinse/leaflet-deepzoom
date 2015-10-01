@@ -6,12 +6,23 @@
  * https://github.com/alfarisi/leaflet-deepzoom
  */
 
-(function(){
-  "use strict";
+(function(factory, window) {
+  // define an AMD module that relies on 'leaflet'
+  if (typeof define === 'function' && define.amd) {
+    define(['leaflet'], factory);
 
-  var L = require('leaflet');
+    // define a Common JS module that relies on 'leaflet'
+  } else if (typeof exports === 'object') {
+    module.exports = factory(require('leaflet'));
+  }
 
-  L.TileLayer.DeepZoom = L.TileLayer.extend({
+  // attach your plugin to the global 'L' variable
+  if (typeof window !== 'undefined' && window.L) {
+    window.L.TileLayer.DeepZoom = factory(L);
+  }
+}(function (L){
+
+  var DeepZoom = L.TileLayer.extend({
     options: {
       continuousWorld: true,
       tolerance: 0.8,
@@ -113,6 +124,6 @@
     return new L.TileLayer.DeepZoom(url, options);
   };
 
-  module.exports = L.tileLayer.deepzoom;
-
-});
+  return DeepZoom;
+  
+}, window));
