@@ -1,0 +1,19 @@
+{
+  "name": "leaflet-deepzoom",
+  "version": "1.0.0",
+  "description": "Node support fork of leaflet-deepzom",
+  "main": "leaflet-deepzoom.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Hologram-Rinse/leaflet-deepzoom.git"
+  },
+  "author": "William Slippey",
+  "license": "ISC",
+  "homepage": "https://github.com/Hologram-Rinse/leaflet-deepzoom#leaflet-deepzoom",
+  "dependencies": {
+    "leaflet": "^0.7.5"
+  }
+}
